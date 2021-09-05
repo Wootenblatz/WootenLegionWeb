@@ -11,10 +11,28 @@ html {
     min-height: 100%;
 }
 
+body {
+    background-color:rgba(50, 50, 50, 0.9);
+}
+
+.footer {
+    background-color:rgba(0, 0, 0, 1);
+}
+h1,h2,h3,h4,h5,h6, a {
+    color: #ffc600;
+}
+
+.footer {
+    border-radius: 0px;
+    padding: 10px 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
 .main-box {
     width: 100%;
     margin: 20px auto;
-    border-radius: 5px;
+    border-radius: 0px;
     text-align: center;
 }
 
@@ -22,8 +40,7 @@ html {
     max-width: 80%;
     margin: 10px auto 10px auto;
     padding: 25px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 5px;
+    border-radius: 0px;
 }
 
 .login-form img {
@@ -44,7 +61,7 @@ html {
 }
 
 #myCarousel {
-    border-radius: 5px;
+    border-radius: 0px;
     overflow: hidden;
     border: 1px solid #0b2e13;
 }
@@ -55,7 +72,8 @@ nav.navbar.bootsnav ul.nav > li > a {
 
 nav.navbar.bootsnav {
     background-color: transparent;
-    border-bottom: none;
+    border-bottom: 0px;
+    margin-bottom: 20px;
     background: url(../images/headerbar_bg.png) no-repeat left 38px, url(../images/headerbar_bg2.png) no-repeat right 38px;
 }
 
@@ -68,8 +86,8 @@ nav.navbar.bootsnav:before, nav.navbar.bootsnav:after {
 .box1 {
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 20px;
+    border-radius: 0px;
     margin-bottom: 10px;
 }
 
@@ -191,7 +209,7 @@ ul.cart-list > li.total > .btn {
     }
 
     nav.navbar-sidebar ul.nav > li > a {
-        padding: 10px 15px;
+        padding: 0px 15px;
         font-weight: bold;
     }
 

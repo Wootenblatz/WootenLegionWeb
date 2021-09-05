@@ -18,25 +18,21 @@
     <meta name="description" content="<?php echo $antiXss->xss_clean(get_config("page_title")); ?>">
     <title><?php echo $antiXss->xss_clean(get_config("page_title")); ?></title>
     <link rel="stylesheet"
-          href="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/css/bootstrap.min.css">
+          href="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/css/bootstrap.min.css">
     <link rel="stylesheet"
-          href="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/css/bootsnav.css">
+          href="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/css/bootsnav.css">
     <link rel="stylesheet"
-          href="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/css/animate.css">
+          href="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/css/animate.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet"
-          href="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/css/style.css">
-    <script src="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/jquery-3.3.1.min.js"></script>
-    <script src="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/bootstrap.min.js"></script>
-    <script src="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/bootsnav.js"></script>
-    <script src="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/popper.min.js"></script>
+          href="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/css/style.css">
+    <script src="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/jquery-3.3.1.min.js"></script>
+    <script src="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/bootstrap.min.js"></script>
+    <script src="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/bootsnav.js"></script>
+    <script src="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/popper.min.js"></script>
 </head>
 <body>
-<video autoplay muted loop id="myVideo">
-    <source src="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/video.mp4"
-            type="video/mp4">
-</video>
 <div class="content1">
     <div class="container">
         <nav class="navbar navbar-default brand-center bootsnav">
@@ -48,7 +44,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="#brand"><img
-                                src="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/images/wow-logo.png"
+                                src="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/images/wow-logo.png"
                                 class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->

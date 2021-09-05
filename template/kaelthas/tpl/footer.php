@@ -10,9 +10,12 @@ use SebastianBergmann\Timer\Timer;
 
 ?>
 <div class="row">
-    <div class="text-center box1">
-        Developed by <a href="http://wootenmane.wootenblatz.com">wootenmane.wootenblatz.com</a>
-        - <?php echo "Load " . Timer::resourceUsage(); ?>
+    <div class="container">
+        <div class="col-md-12 footer">
+            Developed by <a href="http://wootenmane.wootenblatz.com">Wootenblatz, MasterKing32 and the SPPv2 Team</a>
+            - <?php echo "Load " . Timer::resourceUsage(); ?>
+        </div>
+
     </div>
 </div>
 </div>

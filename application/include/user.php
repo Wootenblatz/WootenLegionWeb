@@ -57,6 +57,7 @@ class user
 
         $bnet_hashed_pass = strtoupper(bin2hex(strrev(hex2bin(strtoupper(hash('sha256', strtoupper(hash('sha256', strtoupper($_POST['email'])) . ':' . strtoupper($_POST['password']))))))));
         $bnet_account_id = -1;
+        $createCount = 0;
         
         if (self::check_bnet_email_exists(strtoupper($_POST["email"]))) {
             database::$auth->insert('battlenet_accounts', [
@@ -69,7 +70,7 @@ class user
             // return false;
         }
         else {
-            $datas = database::$auth->select('battlenet_accounts', ['id'], ['email' => Medoo::raw('UPPER(:email)', [':email' => $email])]);
+            $datas = database::$auth->select('battlenet_accounts', ['id'], ['email' => Medoo::raw('UPPER(:email)', [':email' => $_POST['email']])]);
             if(!empty($datas[0])) {
                 $bnet_account_id = $datas[0]['id'];
             }
@@ -79,27 +80,37 @@ class user
             if($_POST["numberOfAccounts"]) {
                 foreach(range(1,$_POST["numberOfAccounts"]) as $accountIndex) {
                     $username = $bnet_account_id . '#' . $accountIndex;
-                    $hashed_pass = strtoupper(sha1(strtoupper($username . ':' . $_POST['password'])));
-                    database::$auth->insert('account', [
-                        'username' => $antiXss->xss_clean(strtoupper($username)),
-                        'sha_pass_hash' => $antiXss->xss_clean($hashed_pass),
-                        'email' => $antiXss->xss_clean(strtoupper($_POST['email'])),
-                        'expansion' => $antiXss->xss_clean(get_config('expansion')),
-                        'battlenet_account' => $bnet_account_id
-                    ]);
-                    $bnet_account_id = database::$auth->id();
-                    $username = $bnet_account_id . '#' . $accountIndex;
-                    database::$auth->insert('account_access', [
-                        'id' => $bnet_account_id,
-                        'gmlevel' => 0,
-                        'RealmID' => -1   
-                    ]);
-
+                    $accountExists =
+                        database::$auth->select(
+                            'account', ['id'], 
+                            [
+                                'battlenet_account' => Medoo::raw(':battlenet_account', [':battlenet_account' => $bnet_account_id]),
+                                'username' => Medoo::raw('UPPER(:username)', [':username' => $username])
+                            ]
+                        );
+                    if(empty($accountExists)) {
+                        $hashed_pass = strtoupper(sha1(strtoupper($username . ':' . $_POST['password'])));
+                        database::$auth->insert('account', [
+                            'username' => $antiXss->xss_clean(strtoupper($username)),
+                            'sha_pass_hash' => $antiXss->xss_clean($hashed_pass),
+                            'email' => $antiXss->xss_clean(strtoupper($_POST['email'])),
+                            'expansion' => $antiXss->xss_clean(get_config('expansion')),
+                            'battlenet_account' => $bnet_account_id
+                        ]);
+                        $account_id = database::$auth->id();
+                        $username = $bnet_account_id . '#' . $accountIndex;
+                        database::$auth->insert('account_access', [
+                            'id' => $account_id,
+                            'gmlevel' => 0,
+                            'RealmID' => -1   
+                        ]);
+                        $createCount += 1;
+                    }
                 }
             }
 
         }
-        success_msg('Your account has been created.');
+        success_msg('Your server account has been created with ' . $createCount . ' game accounts');
         return true;
     }
 
@@ -439,6 +450,6 @@ class user
     public static function add_password_key_to_acctbl()
     {
         database::$auth->query("ALTER TABLE `account` ADD COLUMN `restore_key` varchar(255) NULL DEFAULT '1';");
-        return ture;
+        return true;
     }
 }

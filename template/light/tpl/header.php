@@ -18,12 +18,12 @@
     <meta name="description" content="<?php echo $antiXss->xss_clean(get_config("page_title")); ?>">
     <title><?php echo $antiXss->xss_clean(get_config("page_title")); ?></title>
     <link rel="stylesheet"
-          href="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/css/bootstrap.min.css">
+          href="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/css/bootstrap.min.css">
     <link rel="stylesheet"
-          href="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/css/style.css">
-    <script src="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/jquery-3.3.1.min.js"></script>
-    <script src="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/bootstrap.min.js"></script>
-    <script src="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/popper.min.js"></script>
+          href="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/css/style.css">
+    <script src="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/jquery-3.3.1.min.js"></script>
+    <script src="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/bootstrap.min.js"></script>
+    <script src="/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/js/popper.min.js"></script>
 </head>
 <body>
 <div class="container">
