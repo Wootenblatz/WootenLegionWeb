@@ -2,3 +2,4 @@
 .idea
 application/config/config.php
 .htpasswd
+.htaccess
