@@ -1,0 +1,88 @@
+<?php
+/**
+ * @author Amin Mahmoudi (MasterkinG)
+ * @copyright    Copyright (c) 2019 - 2022, MsaterkinG32 Team, Inc. (https://masterking32.com)
+ * @link    https://masterking32.com
+ * @Description : It's not masterking32 framework !
+ **/
+
+// base config
+$config['baseurl'] = "http://localhost";                            // Site URL
+$config['page_title'] = "Simple Register";                          // Site Title
+
+$config['db_auth_host'] = '127.0.0.1';                              // Auth Database Host
+$config['db_auth_port'] = '3306';                                   // Auth Database Port
+$config['db_auth_user'] = 'root';                                   // Auth Database Username
+$config['db_auth_pass'] = 'root';                                   // Auth Database Password
+$config['db_auth_dbname'] = 'realmd';                               // Auth Database DBName
+$config['realmlist'] = 'logon.myserver.com';                        // Server Realmlist
+$config['patch_location'] = 'http://mypatch.com/patch.mpq';         // If have patch set URL to download our patch here or make that empty
+$config['game_version'] = '3.3.5a (12340)';                         // Your game version
+$config['expansion'] = '2';                                         // 0 = Classic, 1 = The Burning Crusade (TBC), 2 = Wrath of the Lich King (WotLK), 3 = Mist of Pandaria (MOP), 4 = Warlords of Draenor (WOD), 5 = Legion
+
+$config['battlenet_support'] = false;                               // Change it to true, If you want use it for WoD/Legion/BFA
+
+$config['debug_mode'] = false;                                      // Enable debug mode to display system errors.
+$config['template'] = 'light';                                      // Change template name ( 'light' or 'icecrown' or 'kaelthas' )
+
+$config['smtp_host'] = 'smtp1.example.com';                         // Specify main and backup SMTP servers
+$config['smtp_port'] = 587;                                         // TCP port to connect to
+$config['smtp_auth'] = true;                                        // Enable SMTP authentication
+$config['smtp_user'] = 'user@example.com';                          // SMTP username
+$config['smtp_pass'] = 'SECRET';                                    // SMTP password
+$config['smtp_secure'] = 'tls';                                     // Enable TLS encryption, `ssl` also accepted
+$config['smtp_mail'] = 'no-reply@example.com';                      // Send emails by ...
+
+$config['realmlists'] = array(
+	"1" => array(
+		'realmid' => 1,
+		'realmname' => "Realm 1",
+		'db_host' => "127.0.0.1",
+		'db_port' => "3306",
+		'db_user' => "root",
+		'db_pass' => "root",
+		'db_name' => "rm1_chars"
+	)
+);
+
+
+/* 
+
+ **********************************
+ * EXMAPLE OF MORE THAN ONE REALM *
+ **********************************
+ 
+$config['realmlists'] = array( // Add your realmlist here
+    "1" => array(
+        'realmid' => 1,
+        'realmname' => "Realm 1",
+        'db_host' => "127.0.0.1",
+        'db_port' => "3306",
+        'db_user' => "root",
+        'db_pass' => "root",
+        'db_name' => "rm1_chars"
+    ),
+    "2" => array(
+        'realmid' => 2,
+        'realmname' => "Realm 2",
+        'db_host' => "127.0.0.1",
+        'db_port' => "3306",
+        'db_user' => "root",
+        'db_pass' => "root",
+        'db_name' => "rm2_chars"
+    ),
+    "3" => array(
+        'realmid' => 3,
+        'realmname' => "Realm 3",
+        'db_host' => "127.0.0.1",
+        'db_port' => "3306",
+        'db_user' => "root",
+        'db_pass' => "root",
+        'db_name' => "rm3_chars"
+    )
+);
+
+*/
+
+$config['script_version'] = '1.8';
+?>
