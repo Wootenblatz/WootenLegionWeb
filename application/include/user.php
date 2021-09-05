@@ -76,22 +76,27 @@ class user
         }
 
         if($bnet_account_id > 0) {
-            $username = $bnet_account_id . '#1';
-            $hashed_pass = strtoupper(sha1(strtoupper($username . ':' . $_POST['password'])));
-            database::$auth->insert('account', [
-                'username' => $antiXss->xss_clean(strtoupper($username)),
-                'sha_pass_hash' => $antiXss->xss_clean($hashed_pass),
-                'email' => $antiXss->xss_clean(strtoupper($_POST['email'])),
-                'expansion' => $antiXss->xss_clean(get_config('expansion')),
-                'battlenet_account' => $bnet_account_id
-            ]);
-            $bnet_account_id = database::$auth->id();
-            $username = $bnet_account_id . '#1';
-            database::$auth->insert('account_access', [
-                'id' => $bnet_account_id,
-                'gmlevel' => 0,
-                'RealmID' => -1   
-            ]);
+            if($_POST["numberOfAccounts"]) {
+                foreach(range(1,$_POST["numberOfAccounts"]) as $accountIndex) {
+                    $username = $bnet_account_id . '#' . $accountIndex;
+                    $hashed_pass = strtoupper(sha1(strtoupper($username . ':' . $_POST['password'])));
+                    database::$auth->insert('account', [
+                        'username' => $antiXss->xss_clean(strtoupper($username)),
+                        'sha_pass_hash' => $antiXss->xss_clean($hashed_pass),
+                        'email' => $antiXss->xss_clean(strtoupper($_POST['email'])),
+                        'expansion' => $antiXss->xss_clean(get_config('expansion')),
+                        'battlenet_account' => $bnet_account_id
+                    ]);
+                    $bnet_account_id = database::$auth->id();
+                    $username = $bnet_account_id . '#' . $accountIndex;
+                    database::$auth->insert('account_access', [
+                        'id' => $bnet_account_id,
+                        'gmlevel' => 0,
+                        'RealmID' => -1   
+                    ]);
+
+                }
+            }
 
         }
         success_msg('Your account has been created.');
