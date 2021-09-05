@@ -62,6 +62,6 @@ RESTORE PASSWORD DOSEN'T WORK IN DEMO VERSIONS.
 
 ## Programmers
 
-Author : [Amin.MasterkinG](https://masterking32.com)
+Author : [Amin.MasterkinG](https://wootenmane.wootenblatz.com)
 
 

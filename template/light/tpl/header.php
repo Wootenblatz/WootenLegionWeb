@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by Amin.MasterkinG
- * Website : MasterkinG32.CoM
+ * Website : wootenmane.wootenblatz.com
  * Email : lichwow_masterking@yahoo.com
  * Date: 11/26/2018 - 8:36 PM
  */
@@ -12,7 +12,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="MasterkinG32.CoM"/>
+    <meta name="generator" content="wootenmane.wootenblatz.com"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="description" content="<?php echo $antiXss->xss_clean(get_config("page_title")); ?>">
     <meta name="description" content="<?php echo $antiXss->xss_clean(get_config("page_title")); ?>">
