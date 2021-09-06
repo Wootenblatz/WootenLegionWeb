@@ -11,6 +11,11 @@ html {
     min-height: 100%;
 }
 
+.hint {
+    color: #777;
+    font-size: 0.8em;
+}
+
 body {
     background-color:rgba(50, 50, 50, 0.9);
 }
@@ -18,8 +23,12 @@ body {
 .footer {
     background-color:rgba(0, 0, 0, 1);
 }
-h1,h2,h3,h4,h5,h6, a {
+h1, a {
     color: #ffc600;
+}
+
+h2,h3,h4,h5,h6 {
+    color: #814e00;
 }
 
 .footer {
@@ -57,6 +66,7 @@ h1,h2,h3,h4,h5,h6, a {
 }
 
 .container {
+    padding: 10px;
     margin-top: 30px;
 }
 
